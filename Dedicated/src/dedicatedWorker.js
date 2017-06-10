@@ -9,5 +9,9 @@ self.addEventListener('message', function (e) {
 
     self.postMessage(numbers);
   }
+
+  else if (e.data.command === "stop") {
+    self.close();//terminates the worker role
+  }
 });
 
