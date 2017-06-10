@@ -21,5 +21,12 @@ window.addEventListener("load", function () {
       alert('no input found')
     }
   })
+  document.getElementById('stop').addEventListener("click", function () {
+    console.log('stopping worker role')
+    wk.postMessage({ command: 'stop' });
+    document.getElementById('content').innerHTML = "worker role is stopped <br /> NO OUTPUT WILL BE DISPLAYED";
+    // document.getElementById('start').style.visibility = 'hidden';
+
+  })
 })
 
