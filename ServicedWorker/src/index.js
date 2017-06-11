@@ -12,7 +12,7 @@ else {
 }
 
 document.getElementById('fetchData').addEventListener('click', function (e) {
-  fetch('http://127.0.0.1:8888/src/albums.json', { method: 'Get' }).then(function (response) { console.log(response) })
+  fetch('/src/albums.json', { method: 'Get' }).then(function (response) { console.log(response) })
     .catch(function (err) {
       console.log(err);
       // Error :(

@@ -14,5 +14,11 @@ self.addEventListener('activate', function (e) {
 
 self.addEventListener('fetch', function (event) {
   console.log("Request -->", event.request.url);
+  if (!navigator.onLine) {
+    event.respondWith(new Response('<h1>You are offline</h1>'));
 
+  }
+  else {
+    event.respondWith(fetch(event.request));
+  }
 });
